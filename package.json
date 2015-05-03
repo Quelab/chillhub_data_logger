@@ -1,0 +1,30 @@
+{
+  "name": "humidity-logger",
+  "version": "0.1.0",
+  "description": "A simple logger for quelab humidity data",
+  "main": "humidity-logger.js",
+  "scripts": {
+    "start": "node humidity-logger.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Quelab/freezer_burn.git"
+  },
+  "keywords": [
+    "chillhub",
+    "greenbean",
+    "appliances",
+    "firebase"
+  ],
+  "dependencies": {
+    "firebase": "^2.2.3"
+  },
+  "author": "KAK BO CHE",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/Quelab/freezer_burn/issues"
+  },
+  "homepage": "https://github.com/Quelab/freezer_burn",
+  "devDependencies": {
+  }
+}
