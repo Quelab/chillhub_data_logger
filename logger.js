@@ -60,7 +60,7 @@ var configureLoggers = function(ref){
   ref.once("value", function(snapshot) {
     var ignoreList = [ 'created', 'hardware_version', 'serial_data','software_version', 'status', 'updated', 'chilldemo']
     var data = Object.filterOutKeys(snapshot.val(), ignoreList);
-    var chillHubKeys = Object.keys(data); //Object.keys(data).filter(function(element){ return (ignoreList.indexOf(element) < 0)});
+    var chillHubKeys = Object.keys(data);
     console.log(chillHubKeys);
     useServerOffset(ref, function(offset){
       chillHubKeys.forEach(function(device_type){
