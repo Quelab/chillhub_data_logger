@@ -39,6 +39,9 @@ https://quelab-chillhub.firebaseio.com/freezer_burn_sht15/78f3a753-4d28-499a-8b0
 ...
 ```
 
+## Running Logger from command line via screen
+nohup node logger.js >/dev/null  &
+
 ## FireBase format
 ![Logging](../images/data_logger_01.png)
 

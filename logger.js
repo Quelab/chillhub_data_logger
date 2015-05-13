@@ -8,6 +8,7 @@ var fb = require('./firebaseHelper.js');
 var packageFile = "./package.json";
 var configFile = "./chillhub.json";
 
+var additionalKeysToExclude = [];
 
 Object.filterOutKeys = function( obj, keys) {
     var result = {}, key;
@@ -20,14 +21,14 @@ Object.filterOutKeys = function( obj, keys) {
     return result;
 };
 
-var startFirebase = function() {
+var startFirebase = function(keysToExclude) {
    fb.startConnection(configFile, function(e, attachments) {
       if (e) {
          console.log("Error connecting to firebase.");
       } else {
          // got our attachment point
          console.log("Connected to firebase, configuring loggers.");
-         configureLoggers(attachments);
+         configureLoggers(attachments, keysToExclude);
       }
    });
 }
@@ -50,15 +51,15 @@ var createLogger = function(event_ref, log_ref, offset){
     var new_log_ref = log_ref.child(current_day)
 
     data['Time'] =  Firebase.ServerValue.TIMESTAMP;
-    console.log(new_log_ref.toString());
     console.log(data);
     new_log_ref.push(data);
   })
 }
 
-var configureLoggers = function(ref){
+var configureLoggers = function(ref, keysToExclude){
   ref.once("value", function(snapshot) {
     var ignoreList = [ 'created', 'hardware_version', 'serial_data','software_version', 'status', 'updated', 'chilldemo']
+    ignoreList = ignoreList.concat(keysToExclude);
     var data = Object.filterOutKeys(snapshot.val(), ignoreList);
     var chillHubKeys = Object.keys(data);
     console.log(chillHubKeys);
@@ -78,4 +79,8 @@ var configureLoggers = function(ref){
 });
 }
 
-startFirebase();
+process.argv.forEach(function (val, index, array) {
+  if (index > 1){ additionalKeysToExclude.push(val); }
+});
+console.log("Excluding the following keys:" + additionalKeysToExclude);
+startFirebase(additionalKeysToExclude);
