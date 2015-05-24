@@ -43,8 +43,6 @@ https://quelab-chillhub.firebaseio.com/freezer_burn_sht15/78f3a753-4d28-499a-8b0
 nohup node logger.js >/dev/null  &
 
 ## FireBase format
-![Logging](../images/data_logger_01.png)
-
 https://firebaseurl/device_type/device_uuid/YYYY-MM-DD/client_timestamp/
 
 ```javascript

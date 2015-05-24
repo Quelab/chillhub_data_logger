@@ -1,14 +1,14 @@
 {
-  "name": "humidity-logger",
+  "name": "chillhub_data_logger",
   "version": "0.1.0",
-  "description": "A simple logger for quelab humidity data",
-  "main": "humidity-logger.js",
+  "description": "A simple logger for chillhub data",
+  "main": "logger.js",
   "scripts": {
-    "start": "node humidity-logger.js"
+    "start": "node logger.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Quelab/freezer_burn.git"
+    "url": "https://github.com/Quelab/chillhub_data_logger"
   },
   "keywords": [
     "chillhub",
@@ -19,12 +19,12 @@
   "dependencies": {
     "firebase": "^2.2.3"
   },
-  "author": "KAK BO CHE",
+  "author": "KAK BO CHE (kak.bo.che@gmail.com)",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/Quelab/freezer_burn/issues"
+    "url": "https://github.com/Quelab/chillhub_data_logger/issues"
   },
-  "homepage": "https://github.com/Quelab/freezer_burn",
+  "homepage": "https://github.com/Quelab/chillhub_data_logger",
   "devDependencies": {
   }
 }

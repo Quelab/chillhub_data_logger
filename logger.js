@@ -6,7 +6,7 @@ var fb = require('./firebaseHelper.js');
 
 // Configs
 var packageFile = "./package.json";
-var configFile = "./chillhub.json";
+var configFile = "./share/chillhub.json";
 
 var additionalKeysToExclude = [];
 
